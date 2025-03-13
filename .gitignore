@@ -1,3 +1,9 @@
+# VSCode files
+.vscode
+
+# Project executables
+build/world
+
 # Prerequisites
 *.d
 
