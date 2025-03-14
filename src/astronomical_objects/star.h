@@ -2,11 +2,10 @@
 #define WORLD_ENGINE_STAR_H_
 
 #include "vector3d.h"
+#include "astronomical_objects/astronomical_object.h"
 
-class Star {
+class Star: AstronomicalObject {
 private:
-    Vector3d pos_;
-    double radius_;
     double luminosity_;
 
 public:

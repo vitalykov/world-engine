@@ -1,4 +1,4 @@
-#include "planet.h"
+#include "astronomical_objects/planet.h"
 
 Planet::Planet(double radius, Star* star, double distance_to_star) {
     radius_ = radius;

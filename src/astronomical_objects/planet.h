@@ -2,12 +2,11 @@
 #define WORLD_ENGINE_PLANET_H_
 
 #include "vector3d.h"
-#include "star.h"
+#include "astronomical_objects/star.h"
+#include "astronomical_objects/astronomical_object.h"
 
 class Planet {
 private:
-    Vector3d pos_;
-    double radius_;
     Star* star_;
     double distance_to_star_;
 
