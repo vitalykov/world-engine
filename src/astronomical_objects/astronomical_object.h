@@ -1,18 +1,16 @@
 #ifndef WORLD_ENGINE_ASTRONOMICAL_OBJECTS_ASTRONOMICAL_OBJECT_H_
 #define WORLD_ENGINE_ASTRONOMICAL_OBJECTS_ASTRONOMICAL_OBJECT_H_
 
-#include "vector3d.h"
-
-typedef double Size;
+#include "astronomical_objects/types.h"
 
 class AstronomicalObject {
-private:
-    Vector3d position_;
+protected:
+    Position position_;
     Size radius_;
 
 public:
-    Vector3d GetPosition();
-    Size GetRadius();
+    inline Position GetPosition();
+    inline Size GetRadius();
 };
 
 #endif  // WORLD_ENGINE_ASTRONOMICAL_OBJECTS_ASTRONOMICAL_OBJECT_H_

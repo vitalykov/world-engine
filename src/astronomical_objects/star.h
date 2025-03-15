@@ -4,7 +4,7 @@
 #include "vector3d.h"
 #include "astronomical_objects/astronomical_object.h"
 
-class Star: AstronomicalObject {
+class Star: public AstronomicalObject {
 private:
     double luminosity_;
 

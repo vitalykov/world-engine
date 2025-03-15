@@ -3,5 +3,5 @@
 #include <math.h>
 
 double Vector3d::Length() {
-    sqrt(x * x + y * y + z * z);
+    sqrt(x_ * x_ + y_ * y_ + z_ * z_);
 }
