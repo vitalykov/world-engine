@@ -6,7 +6,7 @@
 
 class Star: public AstronomicalObject {
 private:
-    double luminosity_;
+    Power luminosity_;
 
 public:
     Star(double radius, double luminosity);

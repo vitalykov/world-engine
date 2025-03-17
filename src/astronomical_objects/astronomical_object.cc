@@ -2,4 +2,4 @@
 
 Position AstronomicalObject::GetPosition() { return position_; }
 
-Size AstronomicalObject::GetRadius() { return radius_; }
+Length AstronomicalObject::GetRadius() { return radius_; }

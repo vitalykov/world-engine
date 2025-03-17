@@ -6,11 +6,11 @@
 class AstronomicalObject {
 protected:
     Position position_;
-    Size radius_;
+    Length radius_;
 
 public:
     inline Position GetPosition();
-    inline Size GetRadius();
+    inline Length GetRadius();
 };
 
 #endif  // WORLD_ENGINE_ASTRONOMICAL_OBJECTS_ASTRONOMICAL_OBJECT_H_
