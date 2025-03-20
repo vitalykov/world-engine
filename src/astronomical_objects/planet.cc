@@ -1,5 +1,7 @@
 #include "astronomical_objects/planet.h"
 
+namespace world_engine {
+
 Planet::Planet(PlanetInfo* planet_info) {
     radius_ = planet_info->radius;
     star_ = planet_info->star;
@@ -12,3 +14,5 @@ Planet::Planet(PlanetInfo* planet_info) {
     axial_tilt_ = planet_info->axial_tilt;
     rotation_angle_ = 0;
 }
+
+}  // namespace world_engine

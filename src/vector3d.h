@@ -3,6 +3,8 @@
 
 #include "astronomical_objects/types.h"
 
+namespace world_engine {
+
 class Vector3d {
 private:
     double x_;
@@ -12,9 +14,11 @@ private:
 public:
     Vector3d(double x, double y, double z);
     Vector3d(Position p1, Position p2);
-    double Length();
+    Length Length();
     double Dot(Vector3d* vec);
-    double Angle(Vector3d* vec);
+    Angle Angle(Vector3d* vec);
 };
+
+}  // namespace world_engine
 
 #endif  // WORLD_ENGINE_VECTOR3D_H_

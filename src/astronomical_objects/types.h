@@ -1,28 +1,32 @@
 #ifndef WORLD_ENGINE_ASTRONOMICAL_OBJECTS_TYPES_H_
 #define WORLD_ENGINE_ASTRONOMICAL_OBJECTS_TYPES_H_
 
-typedef double Coordinate; /* metres */
+namespace world_engine {
 
-/* (x, y, z) point */
+typedef double Coordinate; // metres
+
+// (x, y, z) point
 struct Position {
     Coordinate x;
     Coordinate y;
     Coordinate z;
 };
 
-typedef double Length;       /* metres */
-typedef double Time;         /* seconds */
-typedef double Temperature;  /* kelvins */
-typedef double Mass;         /* kilograms */
-typedef double Amount;       /* moles */
-typedef double Energy;       /* joules */
-typedef double Power;        /* watts */
-typedef double Force;        /* newtons */
-typedef double Pressure;     /* pascals */
-typedef double Angle;        /* radians */
-typedef double Area;         /* m^2 */
-typedef double Volume;       /* m^3 */
-typedef double Velocity;     /* m / s */
-typedef double Acceleration; /* m / s^2 */
+typedef double Length;       // metres (m)
+typedef double Time;         // seconds (s)
+typedef double Temperature;  // kelvins (K)
+typedef double Mass;         // kilograms (kg)
+typedef double Amount;       // moles (mol)
+typedef double Energy;       // joules (J)
+typedef double Power;        // watts (W)
+typedef double Force;        // newtons (N)
+typedef double Pressure;     // pascals (Pa)
+typedef double Angle;        // radians (rad)
+typedef double Area;         // m^2
+typedef double Volume;       // m^3
+typedef double Velocity;     // m / s
+typedef double Acceleration; // m / s^2
+
+}  // namespace world_engine
 
 #endif  // WORLD_ENGINE_ASTRONOMICAL_OBJECTS_TYPES_H_

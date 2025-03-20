@@ -1,5 +1,11 @@
 #include "astronomical_objects/astronomical_object.h"
 
-Position AstronomicalObject::GetPosition() { return position_; }
+namespace world_engine {
 
-Length AstronomicalObject::GetRadius() { return radius_; }
+inline Position AstronomicalObject::GetPosition() { return position_; }
+
+inline Mass AstronomicalObject::GetMass() { return mass_; }
+
+inline Length AstronomicalObject::GetRadius() { return radius_; }
+
+}  // namespace world_engine

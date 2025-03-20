@@ -5,6 +5,9 @@
 #include "astronomical_objects/astronomical_object.h"
 #include "astronomical_objects/types.h"
 
+namespace world_engine {
+
+// Structure for initializing Planet class
 struct PlanetInfo {
     Length radius;
     Star* star;
@@ -15,6 +18,7 @@ struct PlanetInfo {
     double rotation_angle;
 };
 
+// Planet which is in orbit of the star
 class Planet: public AstronomicalObject {
 private:
     Star* star_;
@@ -25,7 +29,10 @@ private:
     double rotation_angle_;
 
 public:
+    // Constructing the planet using PlanetInfo
     Planet(PlanetInfo* planet_info);
 };
+
+}  // namespace world_engine
 
 #endif  // WORLD_ENGINE_PLANET_H_
