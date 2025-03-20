@@ -2,7 +2,7 @@
 
 namespace world_engine {
 
-Star::Star(double radius, double luminosity) {
+Star::Star(Length radius, Power luminosity) {
     position_ = {.x = 0, .y = 0, .z = 0};
     radius_ = radius;
     luminosity_ = luminosity;

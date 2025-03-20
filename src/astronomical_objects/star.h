@@ -1,18 +1,20 @@
 #ifndef WORLD_ENGINE_STAR_H_
 #define WORLD_ENGINE_STAR_H_
 
-#include "vector3d.h"
 #include "astronomical_objects/astronomical_object.h"
+#include "vector3d.h"
 
 namespace world_engine {
 
 // Star which emits radiation
-class Star: public AstronomicalObject {
-private:
-    Power luminosity_; // Whole energy of radiation coming from the star in one second
+class Star : public AstronomicalObject {
+   private:
+    Power luminosity_;  // Whole energy of radiation coming from the star in one second
 
-public:
+   public:
     Star(double radius, double luminosity);
+
+    inline Power GetLuminosity() { return luminosity_; }
 };
 
 }  // namespace world_engine

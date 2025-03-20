@@ -7,15 +7,17 @@ namespace world_engine {
 
 // Base class for spherical objects flying in the open space
 class AstronomicalObject {
-protected:
+   protected:
     Position position_;
     Mass mass_;
     Length radius_;
 
-public:
-    inline Position GetPosition();
-    inline Mass GetMass();
-    inline Length GetRadius();
+   public:
+    inline Position GetPosition() { return position_; }
+
+    inline Mass GetMass() { return mass_; }
+
+    inline Length GetRadius() { return radius_; }
 };
 
 }  // namespace world_engine

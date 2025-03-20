@@ -1,6 +1,6 @@
 #include "vector3d.h"
 
-#include <math.h>
+#include <cmath>
 
 namespace world_engine {
 
@@ -16,16 +16,10 @@ Vector3d::Vector3d(Position p1, Position p2) {
     z_ = p2.z - p1.z;
 }
 
-Length Vector3d::Length() {
-    sqrt(x_ * x_ + y_ * y_ + z_ * z_);
-}
+Length Vector3d::Length() { sqrt(x_ * x_ + y_ * y_ + z_ * z_); }
 
-double Vector3d::Dot(Vector3d* vec) {
-    return this->x_ * vec->x_ + this->y_ * vec->y_ + this->z_ * vec->z_;
-}
+double Vector3d::Dot(Vector3d* vec) { return this->x_ * vec->x_ + this->y_ * vec->y_ + this->z_ * vec->z_; }
 
-Angle Vector3d::Angle(Vector3d* vec) {
-    return acos(this->Dot(vec) / (this->Length() * vec->Length()));
-}
+Angle Vector3d::Angle(Vector3d* vec) { return acos(this->Dot(vec) / (this->Length() * vec->Length())); }
 
 }  // namespace world_engine

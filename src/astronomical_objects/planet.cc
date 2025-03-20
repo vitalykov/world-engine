@@ -1,5 +1,7 @@
 #include "astronomical_objects/planet.h"
 
+#include <cmath>
+
 namespace world_engine {
 
 Planet::Planet(PlanetInfo* planet_info) {
@@ -12,7 +14,18 @@ Planet::Planet(PlanetInfo* planet_info) {
     rotation_period_ = planet_info->rotation_period;
     orbital_period_ = planet_info->orbital_period;
     axial_tilt_ = planet_info->axial_tilt;
-    rotation_angle_ = 0;
+    azimuth_ = 0;
+}
+
+void Planet::UpdateState(Time t) {
+    // TODO: elliptical movement of planet around star
+    Angle orbit_angle = t / orbital_period_ * 2 * M_PI;
+    position_.x = distance_to_star_ * std::cos(orbit_angle);
+    position_.y = distance_to_star_ * std::sin(orbit_angle);
+    azimuth_ = t / rotation_period_ * 2 * M_PI;
+
+    Area radiance_area = 4 * M_PI * distance_to_star_ * distance_to_star_;
+    star_irrandiance_ = star_->GetLuminosity() / radiance_area;
 }
 
 }  // namespace world_engine

@@ -5,13 +5,14 @@
 
 namespace world_engine {
 
+// TODO: Probably implement it as template class
 class Vector3d {
-private:
+   private:
     double x_;
     double y_;
     double z_;
 
-public:
+   public:
     Vector3d(double x, double y, double z);
     Vector3d(Position p1, Position p2);
     Length Length();
