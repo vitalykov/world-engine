@@ -3,7 +3,7 @@
 
 #include "astronomical_objects/astronomical_object.h"
 #include "astronomical_objects/star.h"
-#include "astronomical_objects/types.h"
+#include "core/physics/types.h"
 
 namespace world_engine {
 

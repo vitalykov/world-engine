@@ -1,7 +1,7 @@
 #ifndef WORLD_ENGINE_VECTOR3D_H_
 #define WORLD_ENGINE_VECTOR3D_H_
 
-#include "astronomical_objects/types.h"
+#include "core/physics/types.h"
 
 namespace world_engine {
 
