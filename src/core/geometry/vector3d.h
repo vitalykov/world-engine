@@ -1,7 +1,7 @@
 #ifndef WORLD_ENGINE_VECTOR3D_H_
 #define WORLD_ENGINE_VECTOR3D_H_
 
-#include "core/physics/types.h"
+#include "core/physics/quantities.h"
 
 namespace world_engine {
 

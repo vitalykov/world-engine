@@ -3,6 +3,7 @@
 
 #include "astronomical_objects/astronomical_object.h"
 #include "core/geometry/vector3d.h"
+#include "core/physics/quantities.h"
 
 namespace world_engine {
 

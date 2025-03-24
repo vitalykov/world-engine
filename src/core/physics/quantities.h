@@ -1,8 +1,6 @@
 #ifndef WORLD_ENGINE_ASTRONOMICAL_OBJECTS_TYPES_H_
 #define WORLD_ENGINE_ASTRONOMICAL_OBJECTS_TYPES_H_
 
-// TODO: Move this file to different directory (something like core/physics/)
-
 namespace world_engine {
 
 typedef double Coordinate;  // metres
@@ -27,7 +25,7 @@ typedef double Pressure;      // pascals (Pa)
 typedef double Angle;         // radians (rad)
 typedef double Area;          // m^2
 typedef double Volume;        // m^3
-typedef double Velocity;      // m / s
+typedef double Speed;      // m / s
 typedef double Acceleration;  // m / s^2
 
 }  // namespace world_engine
