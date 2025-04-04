@@ -19,7 +19,7 @@ Planet::Planet(PlanetInfo* planet_info) {
 
 void Planet::UpdateState(Time t) {
     // TODO: elliptical movement of planet around star
-    Angle orbit_angle = t / orbital_period_ * 2 * M_PI;
+    AngleRad orbit_angle = t / orbital_period_ * 2 * M_PI;
     position_.x = distance_to_star_ * std::cos(orbit_angle);
     position_.y = distance_to_star_ * std::sin(orbit_angle);
     azimuth_ = t / rotation_period_ * 2 * M_PI;

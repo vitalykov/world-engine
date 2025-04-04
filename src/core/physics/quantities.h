@@ -6,7 +6,7 @@ namespace world_engine {
 typedef double Coordinate;  // metres
 
 // (x, y, z) point
-struct Position {
+struct Point {
     Coordinate x;
     Coordinate y;
     Coordinate z;
@@ -22,10 +22,11 @@ typedef double Power;         // watts (W)
 typedef double Irradiance;    // W / m^2
 typedef double Force;         // newtons (N)
 typedef double Pressure;      // pascals (Pa)
-typedef double Angle;         // radians (rad)
+typedef double AngleRad;      // radians (rad)
+typedef double AngleDeg;      // degrees (°)
 typedef double Area;          // m^2
 typedef double Volume;        // m^3
-typedef double Speed;      // m / s
+typedef double Speed;         // m / s
 typedef double Acceleration;  // m / s^2
 
 }  // namespace world_engine

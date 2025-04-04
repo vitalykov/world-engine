@@ -14,7 +14,7 @@ struct PlanetInfo {
     Length distance_to_star;
     Time rotation_period;
     Time orbital_period;
-    Angle axial_tilt;
+    AngleRad axial_tilt;
 };
 
 // Planet which is in orbit of the star
@@ -30,9 +30,9 @@ class Planet : public AstronomicalObject {
     // Time of full revolution of the planet around the star
     Time orbital_period_;
     // Angle between z axis and the rotation axis of the planet
-    Angle axial_tilt_;
+    AngleRad axial_tilt_;
     // Angle of the rotation of the planet
-    Angle azimuth_;
+    AngleRad azimuth_;
 
    public:
     // Constructing the planet using `PlanetInfo` structure

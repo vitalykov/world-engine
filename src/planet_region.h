@@ -17,7 +17,7 @@ private:
     Planet* planet_;
     double latitude_;
     double longitude_;
-    Position position_;
+    Point position_;
 };
 
 }  // namespace world_engine
