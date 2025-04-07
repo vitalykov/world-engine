@@ -18,7 +18,6 @@ Matrix3D::Matrix3D(double xx, double xy, double xz,
 
 Matrix3D::Matrix3D(Quaternion& q) {
     // Precompute terms to make fewer multiplications
-    double a2 = q.a * q.a;
     double b2 = q.b * q.b;
     double c2 = q.c * q.c;
     double d2 = q.d * q.d;
@@ -41,9 +40,9 @@ Matrix3D::Matrix3D(Quaternion& q) {
 }
 
 void Matrix3D::Apply(Vector3D& vec) {
-    vec.x = (0, 0) * vec.x + (0, 1) * vec.y + (0, 2) * vec.z;
-    vec.y = (1, 0) * vec.x + (1, 1) * vec.y + (1, 2) * vec.z;
-    vec.z = (2, 0) * vec.x + (2, 1) * vec.y + (2, 2) * vec.z;
+    vec.x = matrix_[0][0] * vec.x + matrix_[0][1] * vec.y + matrix_[0][2] * vec.z;
+    vec.y = matrix_[1][0] * vec.x + matrix_[1][1] * vec.y + matrix_[1][2] * vec.z;
+    vec.z = matrix_[2][0] * vec.x + matrix_[2][1] * vec.y + matrix_[2][2] * vec.z;
 }
 
 Vector3D operator *(const Matrix3D& mat, const Vector3D& vec) {

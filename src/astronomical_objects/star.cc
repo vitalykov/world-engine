@@ -2,8 +2,8 @@
 
 namespace world_engine {
 
-Star::Star(Length radius, Power luminosity) {
-    position_ = {.x = 0, .y = 0, .z = 0};
+Star::Star(Len radius, Power luminosity) {
+    position_ = Vector3D(0, 0, 0);
     radius_ = radius;
     luminosity_ = luminosity;
 }

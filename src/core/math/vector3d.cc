@@ -16,9 +16,4 @@ Vector3D::Vector3D(Point p1, Point p2) {
     z = p2.z - p1.z;
 }
 
-void Vector3D::Rotate(Vector3D& axis, AngleRad angle) {
-    double sin_angle = std::sin(angle);
-    double cos_angle = std::cos(angle);
-}
-
 }  // namespace world_engine

@@ -12,7 +12,7 @@ struct Point {
     Coordinate z;
 };
 
-typedef double Length;        // metres (m)
+typedef double Len;        // metres (m)
 typedef double Time;          // seconds (s)
 typedef double Temperature;   // kelvins (K)
 typedef double Mass;          // kilograms (kg)

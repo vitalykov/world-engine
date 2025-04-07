@@ -13,7 +13,7 @@ class Star : public AstronomicalObject {
     Power luminosity_;  // Whole energy of radiation coming from the star in one second
 
    public:
-    Star(Length radius, Power luminosity);
+    Star(Len radius, Power luminosity);
 
     inline Power GetLuminosity() { return luminosity_; }
 };

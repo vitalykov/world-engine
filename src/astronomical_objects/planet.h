@@ -9,9 +9,9 @@ namespace world_engine {
 
 // Structure for initializing Planet class
 struct PlanetInfo {
-    Length radius;
+    Len radius;
     Star* star;
-    Length distance_to_star;
+    Len distance_to_star;
     Time rotation_period;
     Time orbital_period;
     AngleRad axial_tilt;
@@ -22,7 +22,7 @@ class Planet : public AstronomicalObject {
    private:
     // The star around which the planet revolves
     Star* star_;
-    Length distance_to_star_;
+    Len distance_to_star_;
     // Radiant flux from the star on 1 m2 of the planet surface
     Irradiance star_irrandiance_;
     // Time of full self-rotation (360 degrees) of the planet along its axis

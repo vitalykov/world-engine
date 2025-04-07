@@ -1,8 +1,10 @@
 #ifndef WORLD_ENGINE_VECTOR3D_H_
 #define WORLD_ENGINE_VECTOR3D_H_
 
+#include <cmath>
+
 #include "core/physics/quantities.h"
-#include "core/math/matrix3d.h"
+// #include "core/math/matrix3d.h"
 
 namespace world_engine {
 
@@ -24,7 +26,7 @@ class Vector3D {
     }
 
     inline Area SquaredLength() { return x * x + y * y + z * z; }
-    inline Length Length() { return sqrt(x * x + y * y + z * z); }
+    inline Len Length() { return std::sqrt(x * x + y * y + z * z); }
 
     inline Vector3D operator *(double scale) { 
         return Vector3D(x * scale, y * scale, z * scale);
@@ -67,9 +69,9 @@ class Vector3D {
                         x * vec.y - y * vec.x);
     }
 
-    inline AngleRad Angle(Vector3D& vec) { return acos(this->Dot(vec) / (Length() * vec.Length())); }
-
-    void Rotate(const Vector3D& axis, AngleRad angle);
+    inline AngleRad Angle(Vector3D& vec) {
+        return std::acos(this->Dot(vec) / (Length() * vec.Length()));
+    }
 };
 
 }  // namespace world_engine
