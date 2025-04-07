@@ -3,6 +3,7 @@
 
 # Project executables
 build/world
+build/*_test
 
 # Prerequisites
 *.d
