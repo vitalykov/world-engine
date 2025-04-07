@@ -33,10 +33,20 @@ class Planet : public AstronomicalObject {
     AngleRad axial_tilt_;
     // Angle of the rotation of the planet
     AngleRad azimuth_;
+    // Rotation axis of the planet
+    Vector3D axis_;
 
    public:
     // Constructing the planet using `PlanetInfo` structure
     Planet(PlanetInfo* planet_info);
+
+    inline AngleRad GetAxialTilt() { return axial_tilt_; }
+    inline AngleRad GetAzimuth() { return azimuth_; }
+
+    inline Time GetRotationPeriod() { return rotation_period_; }
+    inline Time GetOrbitalPeriod() { return orbital_period_; }
+
+    inline const Vector3D& GetAxis() { return axis_; } 
 
     // Set parameters of the planet based on current time
     void UpdateState(Time t);

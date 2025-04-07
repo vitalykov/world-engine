@@ -3,6 +3,7 @@
 
 #include "astronomical_objects/planet.h"
 #include "core/physics/quantities.h"
+#include "core/math/vector3d.h"
 
 namespace world_engine {
 
@@ -17,7 +18,8 @@ private:
     Planet* planet_;
     double latitude_;
     double longitude_;
-    Point position_;
+    Vector3D initial_position_;
+    Vector3D position_;
 };
 
 }  // namespace world_engine

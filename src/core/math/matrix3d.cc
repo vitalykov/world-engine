@@ -16,14 +16,38 @@ Matrix3D::Matrix3D(double xx, double xy, double xz,
                     matrix_[2][2] = zz;
                    }
 
-void Matrix3D::Apply(Vector3d& vec) {
+Matrix3D::Matrix3D(Quaternion& q) {
+    // Precompute terms to make fewer multiplications
+    double a2 = q.a * q.a;
+    double b2 = q.b * q.b;
+    double c2 = q.c * q.c;
+    double d2 = q.d * q.d;
+    double ab = q.a * q.b;
+    double ac = q.a * q.c;
+    double ad = q.a * q.d;
+    double bc = q.b * q.c;
+    double bd = q.b * q.d;
+    double cd = q.c * q.d;
+
+    matrix_[0][0] = 1 - 2 * (c2 + d2);
+    matrix_[0][1] = 2 * (bc - ad);
+    matrix_[0][2] = 2 * (bd + ac);
+    matrix_[1][0] = 2 * (bc + ad);
+    matrix_[1][1] = 1 - 2 * (b2 + d2);
+    matrix_[1][2] = 2 * (cd - ab);
+    matrix_[2][0] = 2 * (bd - ac);
+    matrix_[2][1] = 2 * (cd + ab);
+    matrix_[2][2] = 1 - 2 * (b2 + c2);
+}
+
+void Matrix3D::Apply(Vector3D& vec) {
     vec.x = (0, 0) * vec.x + (0, 1) * vec.y + (0, 2) * vec.z;
     vec.y = (1, 0) * vec.x + (1, 1) * vec.y + (1, 2) * vec.z;
     vec.z = (2, 0) * vec.x + (2, 1) * vec.y + (2, 2) * vec.z;
 }
 
-Vector3d operator *(const Matrix3D& mat, const Vector3d& vec) {
-    return Vector3d(mat(0, 0) * vec.x + mat(0, 1) * vec.y + mat(0, 2) * vec.z,
+Vector3D operator *(const Matrix3D& mat, const Vector3D& vec) {
+    return Vector3D(mat(0, 0) * vec.x + mat(0, 1) * vec.y + mat(0, 2) * vec.z,
                     mat(1, 0) * vec.x + mat(1, 1) * vec.y + mat(1, 2) * vec.z,
                     mat(2, 0) * vec.x + mat(2, 1) * vec.y + mat(2, 2) * vec.z);
 }

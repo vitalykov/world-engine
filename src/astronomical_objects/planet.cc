@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+#include "core/math/vector3d.h"
+
 namespace world_engine {
 
 Planet::Planet(PlanetInfo* planet_info) {
@@ -15,6 +17,8 @@ Planet::Planet(PlanetInfo* planet_info) {
     orbital_period_ = planet_info->orbital_period;
     axial_tilt_ = planet_info->axial_tilt;
     azimuth_ = 0;
+
+    axis_ = Vector3D(radius_ * std::sin(axial_tilt_), 0, radius_ * std::cos(axial_tilt_));
 }
 
 void Planet::UpdateState(Time t) {
