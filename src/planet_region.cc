@@ -25,6 +25,8 @@ PlanetRegion::PlanetRegion(Planet* planet, double latitude, double longitude) {
     initial_position_.x = r * sin_in * cos_az;
     initial_position_.y = r * sin_in * sin_az;
     initial_position_.z = r * cos_in;
+
+    position_.Copy(initial_position_);
 }
 
 void PlanetRegion::UpdateState(Time t) {
@@ -33,6 +35,14 @@ void PlanetRegion::UpdateState(Time t) {
     Matrix3D rotation_matrix = Matrix3D(q);
     position_.Copy(initial_position_);
     rotation_matrix.Apply(position_);
+
+    star_angle_ = position_.Angle(planet_->GetPosition());
+    
+    double irrad_coeff = -position_.CosAngle(planet_->GetPosition());
+    if (irrad_coeff < 0) {
+        irrad_coeff = 0;
+    }
+    irradiance_ = planet_->GetStarIrradiance() * irrad_coeff;
 }
 
 }  // namespace world_engine

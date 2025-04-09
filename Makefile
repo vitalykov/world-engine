@@ -19,20 +19,14 @@ all: world planet_test
 PHONY += world
 world: $(HELLO)
 
-$(HELLO): $(OBJ_PATH)/main.o
+$(HELLO): $(TEST_PATH)/main.cc | $(BUILD_PATH)
 	$(CXX) $(CXXFLAGS) $^ -o $@
-
-$(OBJ_PATH)/main.o: $(TEST_PATH)/main.cc | $(OBJ_DIRS)
-	$(CXX) -c $(CXXFLAGS) $^ -o $@
 
 PHONY += planet_test
 planet_test: $(PLANET_TEST)
 
-$(PLANET_TEST): $(OBJ_PATH)/planet_test.o $(OBJECTS) | $(BUILD_PATH)
-	$(CXX) $(CXXFLAGS) $^ -o $@
-
-$(OBJ_PATH)/planet_test.o: $(TEST_PATH)/planet_test.cc | $(OBJ_DIRS)
-	$(CXX) -c $(CXXFLAGS) -I$(SRC_PATH) $^ -o $@
+$(PLANET_TEST): $(TEST_PATH)/planet_test.cc $(OBJECTS) | $(BUILD_PATH)
+	$(CXX) $(CXXFLAGS) -I$(SRC_PATH) $^ -o $@
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cc $(SRC_PATH)/%.h | $(OBJ_DIRS)
 	$(CXX) -c $(CXXFLAGS) -I$(SRC_PATH) $< -o $@

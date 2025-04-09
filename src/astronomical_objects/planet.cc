@@ -19,6 +19,9 @@ Planet::Planet(PlanetInfo* planet_info) {
     azimuth_ = 0;
 
     axis_ = Vector3D(radius_ * std::sin(axial_tilt_), 0, radius_ * std::cos(axial_tilt_));
+
+    Area radiance_area = 4 * M_PI * distance_to_star_ * distance_to_star_;
+    star_irrandiance_ = star_->GetLuminosity() / radiance_area;
 }
 
 void Planet::UpdateState(Time t) {

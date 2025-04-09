@@ -46,7 +46,9 @@ class Planet : public AstronomicalObject {
     inline Time GetRotationPeriod() { return rotation_period_; }
     inline Time GetOrbitalPeriod() { return orbital_period_; }
 
-    inline const Vector3D& GetAxis() { return axis_; } 
+    inline const Vector3D& GetAxis() { return axis_; }
+
+    inline Irradiance GetStarIrradiance() { return star_irrandiance_; }
 
     // Set parameters of the planet based on current time
     void UpdateState(Time t);

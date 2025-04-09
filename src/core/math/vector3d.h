@@ -69,6 +69,10 @@ class Vector3D {
                         x * vec.y - y * vec.x);
     }
 
+    inline double CosAngle(Vector3D& vec) {
+        return this->Dot(vec) / (Length() * vec.Length());
+    }
+
     inline AngleRad Angle(Vector3D& vec) {
         return std::acos(this->Dot(vec) / (Length() * vec.Length()));
     }

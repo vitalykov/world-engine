@@ -14,7 +14,7 @@ class AstronomicalObject {
     Len radius_;
 
    public:
-    inline Vector3D GetPosition() { return position_; }
+    inline Vector3D& GetPosition() { return position_; }
 
     inline Mass GetMass() { return mass_; }
 

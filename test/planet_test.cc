@@ -4,6 +4,7 @@
 
 #include "astronomical_objects/planet.h"
 #include "astronomical_objects/star.h"
+#include "planet_region.h"
 
 #define SUN_RADIUS 6.957E8 // m
 #define SUN_LUMINOSITY 3.828E26 // W
@@ -26,6 +27,8 @@ int main() {
         .axial_tilt = EARTH_AXIAL_TILT * M_PI / 180
     };
     Planet earth = Planet(&earth_info);
+    // PlanetRegion moscow = PlanetRegion(&earth, 55.5, 37.5);
+    auto moscow = PlanetRegion(&earth, EARTH_AXIAL_TILT, 0);
 
     double t = 0;
     double step = 24 * 3600;
@@ -33,7 +36,15 @@ int main() {
     for (size_t i = 0; i < 366; ++i) {
         earth.UpdateState(t);
         Vector3D pos = earth.GetPosition();
-        std::printf("%zu) Position: (%.1lf, %.1lf, %.1lf); Distance: %.1lf\n", i, pos.x, pos.y, pos.z, pos.Length());
+        std::printf("%zu) Position: (%.1lf, %.1lf, %.1lf); ", i, pos.x, pos.y, pos.z);
+        std::printf("Distance: %.1lf; ", pos.Length());
+        std::printf("Irrandiance: %.1lf\n", earth.GetStarIrradiance());
+
+        moscow.UpdateState(t);
+        Vector3D m_pos = moscow.GetPosition();
+        std::printf("   Position: (%.1lf, %.1lf, %.1lf); ", m_pos.x, m_pos.y, m_pos.z);
+        std::printf("   Sun angle: %.1lf; ", moscow.GetStarAngle() * 57.3);
+        std::printf("   Irradiance: %.1lf\n", moscow.GetIrradiance());
 
         t += step;
     }
